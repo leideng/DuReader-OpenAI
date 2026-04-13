@@ -9,7 +9,7 @@ import string
 from pathlib import Path
 
 import numpy as np
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI, BadRequestError
 
 
 DEFAULT_MODEL_NAME = "gpt-5.4"
@@ -21,6 +21,7 @@ DEFAULT_REQUEST_BATCH_SIZE = 20
 DEFAULT_ENABLE_THINKING = False
 DEFAULT_DEBUG_MODE = False
 DEFAULT_SAVE_RESULTS_PATH_TEMPLATE = "results/dureader/{model_name}.csv"
+MODELS_WITHOUT_REASONING_EFFORT = set()
 
 
 def parse_args():
@@ -246,10 +247,27 @@ async def get_response_async(
         ],
         "max_completion_tokens": max_completion_tokens,
     }
-    if not enable_thinking:
+    if not enable_thinking and model_name not in MODELS_WITHOUT_REASONING_EFFORT:
         request_kwargs["extra_body"] = {"reasoning_effort": "none"}
 
-    completion = await client.chat.completions.create(**request_kwargs)
+    try:
+        completion = await client.chat.completions.create(**request_kwargs)
+    except BadRequestError as exc:
+        message = str(exc)
+        if (
+            not enable_thinking
+            and "reasoning_effort" in message
+            and "Invalid" in message
+        ):
+            MODELS_WITHOUT_REASONING_EFFORT.add(model_name)
+            request_kwargs.pop("extra_body", None)
+            print(
+                "Provider rejected `reasoning_effort=none`; "
+                f"retrying without it for model `{model_name}`."
+            )
+            completion = await client.chat.completions.create(**request_kwargs)
+        else:
+            raise
     return completion.choices[0].message.content
 
 
