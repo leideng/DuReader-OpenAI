@@ -253,6 +253,7 @@ async def get_response_async(
     try:
         completion = await client.chat.completions.create(**request_kwargs)
         print(completion)
+        print("response:", completion.choices[0].message.content)
     except BadRequestError as exc:
         message = str(exc)
         raise("message")
