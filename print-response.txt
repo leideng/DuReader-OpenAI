@@ -1,0 +1,34 @@
+Dataset loaded successfully with 200 samples from data/dureader.jsonl
+Prompt template loaded from prompt/template.txt
+====================Processing sample 1 of 1====================
+Question: 热诚传说结局
+Gold answers: ['《热诚传说》动画的结局是百合。']
+Context length: 14073 characters
+Prompt(short): 请基于给定的文章回答下述问题。
+文章:文章1
+标题：对结局好失望_热诚传说x吧_百度贴吧
+我想看的不是百合搞基番!为什么看公主和男主在一起,等了这么久的大结局,然后……你给我看这个?感觉前面都白看了,早知道不知结局了,前面25集都挺好的!看到大结局好失落,女主们最终还是没有第到使雷回来,新的道师也出现了,而男主醒来应该是几百年后了(城市都现代化了)!公主早就死了几百年了吧 不楼主请仔细看 新的导师就是史雷 史雷醒来应该也是几年后的事情 然而她们都长大了 下载贴吧APP看高清直播、视频! 贴吧页面意见反馈 违规贴吧举报反馈通道 贴吧违规信息处理公示 内容:
+
+文章2
+标题：《热诚传说》动画的结局是百合??? - 動漫區 - 百合会 - Powered by 
+您需要 登录 才可以下载或查看,没有帐号?成为会员 四月百合淡季什么的,不存在的,顺便快去看re:creator最新一集 真的吗?真的吗!快来人打醒我 补特定几集就行了,整部作品来说没有明显的感情线,大家之间的距离都保持的很好,最后倒是真官方盖章百合,推得丧心病狂 这结局真喷了。。。但是为了百合补这番还是算了吧,不值得 ……好像可以
+......
+、八卦爆料,全天跟踪微博播报。各种爆料、内幕、花边、资讯一网打尽。百万互联网粉丝互动参与,TechWeb官方微博期待您的关注。 ↑扫描二维码 想在手机上看科技资讯和科技八卦吗? 想第一时间看独家爆料和深度报道吗? 请关注TechWeb官方微信公众帐号: 1.用手机扫左侧二维码; 2.在添加朋友里,搜索关注TechWeb。 近日发布的智能手机越来越多,越是到了年中各种旗舰手机都纷纷爆发,本月初努比亚正式... 最近一加5手机的消息已经越来越多了,大家猜测这款产品将会在本月内发布。果不其然一... 索尼旗下冠以Premium尾缀的产品一定是当年的旗舰手机,Xperia XZ Premium则是今年很早... 即日起PC玩家可在Steam客户端领取免费的《Payday 2》,6月21号之前限量发放500万套。... 阔别三周,微软今晨为Insider用户推送全新预览版系统Windows 10 Build 16215,此次限P... 腾讯悄然更新了QQ 8.9.3正式版,新版最大的特色就是对部分UI进行了调整。具体来说,本...  
+请基于上述文章回答下面的问题。
+问题:热诚传说结局
+回答:
+
+ChatCompletion(id='0217760954022530d1cf14ace2967aad8e4a3eaf61373d99902e4', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='关于《热诚传说》的动画结局，不同观众的反馈和相关信息如下：\n1. 有观众认为结局令人失落，剧情走向不符合部分人的期待：有观众原本期望看到公主和男主的感情发展，结局里男主史雷醒来时已经是多年之后，其他角色都已长大，还有观众误以为男主醒来是几百年后城市已经现代化，公主早已离世，但也有观众纠正新出现的导师就是史雷，男主醒来只是几年后的事。\n2. 动画结局被官方盖章百合感情线，不过整部作品整体没有明显的感情线，角色之间的关系距离保持得较好，并不建议专门为了百合情节补番。\n3. 另外《热诚传说》游戏原作也有玩家反馈剧情后期和结局表现平淡，没有达到传说系列以往剧情有冲突、令人感动或心潮澎湃的水准，整体表现差强人意；游戏还存在隐藏结局，触发条件为：通完4神殿，德泽尔在队时打死显主，中途遇到狮子后在大劣势下击败狮子即可触发。', refusal=None, role='assistant', annotations=None, audio=None, function_call=None, tool_calls=None))], created=1776095410, model='doubao-seed-2.0-pro', object='chat.completion', service_tier='default', system_fingerprint=None, usage=CompletionUsage(completion_tokens=228, prompt_tokens=8971, total_tokens=9199, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cached_tokens=0)))
+Response: 关于《热诚传说》的动画结局，不同观众的反馈和相关信息如下：
+1. 有观众认为结局令人失落，剧情走向不符合部分人的期待：有观众原本期望看到公主和男主的感情发展，结局里男主史雷醒来时已经是多年之后，其他角色都已长大，还有观众误以为男主醒来是几百年后城市已经现代化，公主早已离世，但也有观众纠正新出现的导师就是史雷，男主醒来只是几年后的事。
+2. 动画结局被官方盖章百合感情线，不过整部作品整体没有明显的感情线，角色之间的关系距离保持得较好，并不建议专门为了百合情节补番。
+3. 另外《热诚传说》游戏原作也有玩家反馈剧情后期和结局表现平淡，没有达到传说系列以往剧情有冲突、令人感动或心潮澎湃的水准，整体表现差强人意；游戏还存在隐藏结局，触发条件为：通完4神殿，德泽尔在队时打死显主，中途遇到狮子后在大劣势下击败狮子即可触发。
+Best match gold: 《热诚传说》动画的结局是百合。
+F1: 0.0, Precision: 0.0, Recall: 0.0, RL: 0.0
+---------------Result Summary---------------------
+F1: 0.0
+Precision: 0.0
+Recall: 0.0
+RL: 0.0
+----------------------------------------------------
+
