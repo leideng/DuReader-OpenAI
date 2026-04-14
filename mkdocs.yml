@@ -1,1 +1,24 @@
-site_name: My Docs
+site_name: DuReader-OpenAI
+site_description: Documentation for evaluating OpenAI-compatible chat models on a DuReader benchmark slice.
+repo_name: DuReader-OpenAI
+repo_url: https://github.com/leideng/DuReader-OpenAI
+docs_dir: docs
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+nav:
+  - Home: index.md
