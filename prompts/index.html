@@ -11,23 +11,25 @@
       
       
       
+        <link rel="prev" href="..">
       
-        <link rel="next" href="prompts/">
+      
+        <link rel="next" href="../datasets/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>DuReader-OpenAI</title>
+        <title>Prompt Template - DuReader-OpenAI</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -46,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dureader-openai" class="md-skip">
+        <a href="#prompt-template" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="DuReader-OpenAI" class="md-header__button md-logo" aria-label="DuReader-OpenAI" data-md-component="logo">
+    <a href=".." title="DuReader-OpenAI" class="md-header__button md-logo" aria-label="DuReader-OpenAI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Prompt Template
             
           </span>
         </div>
@@ -197,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="DuReader-OpenAI" class="md-nav__button md-logo" aria-label="DuReader-OpenAI" data-md-component="logo">
+    <a href=".." title="DuReader-OpenAI" class="md-nav__button md-logo" aria-label="DuReader-OpenAI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -224,6 +226,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -243,7 +272,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Prompt Template
   
 
     
@@ -254,14 +283,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Home
+    Prompt Template
   
 
     
@@ -287,10 +316,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
+  <a href="#current-template" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run
+        Current Template
       
     </span>
   </a>
@@ -298,10 +327,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
+  <a href="#template-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output
+        Template Variables
       
     </span>
   </a>
@@ -309,10 +338,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#why-this-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        Why This Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customization
       
     </span>
   </a>
@@ -334,34 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="prompts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prompt Template
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="datasets/" class="md-nav__link">
+      <a href="../datasets/" class="md-nav__link">
         
   
   
@@ -440,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="results-doubao-seed-2.0-pro/" class="md-nav__link">
+      <a href="../results-doubao-seed-2.0-pro/" class="md-nav__link">
         
   
   
@@ -495,10 +508,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run" class="md-nav__link">
+  <a href="#current-template" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run
+        Current Template
       
     </span>
   </a>
@@ -506,10 +519,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
+  <a href="#template-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output
+        Template Variables
       
     </span>
   </a>
@@ -517,10 +530,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#why-this-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        Why This Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customization
       
     </span>
   </a>
@@ -547,43 +571,26 @@
   
 
 
-<h1 id="dureader-openai">DuReader-OpenAI<a class="headerlink" href="#dureader-openai" title="Permanent link">&para;</a></h1>
-<p>This project evaluates OpenAI-compatible chat models on the 200-example DuReader Chinese question answering benchmark slice in <code>data/dureader.jsonl</code>.</p>
-<p><code>main.py</code> mirrors the evaluation flow from <code>../2WikiMultihopQA-OpenAI/</code>:</p>
+<h1 id="prompt-template">Prompt Template<a class="headerlink" href="#prompt-template" title="Permanent link">&para;</a></h1>
+<p>The project uses an externalized prompt template that lives at <code>prompt/template.txt</code>.</p>
+<h2 id="current-template">Current Template<a class="headerlink" href="#current-template" title="Permanent link">&para;</a></h2>
+<p><code>text title="prompt/template.txt"
+--8&lt;-- "prompt/template.txt"</code></p>
+<h2 id="template-variables">Template Variables<a class="headerlink" href="#template-variables" title="Permanent link">&para;</a></h2>
+<p>The template is formatted with two variables:</p>
 <ul>
-<li>load the dataset</li>
-<li>format prompts from <code>prompt/template.txt</code></li>
-<li>call the OpenAI-compatible chat API in async batches</li>
-<li>compute <code>F1</code>, <code>Precision</code>, <code>Recall</code>, and <code>ROUGE-L</code></li>
-<li>save detailed results to <strong>both CSV (for data analysis) and Markdown (for GitHub display)</strong></li>
+<li><code>{context}</code> - The supporting document context from the dataset</li>
+<li><code>{input}</code> - The user question to answer based on the context</li>
 </ul>
-<h2 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">uv sync
-uv run python main.py
-</code></pre>
-<p>For a no-API sanity check:</p>
-<pre><code class="language-bash">uv run python main.py --debug-mode --max-samples 5
-</code></pre>
-<p>Run with custom model:</p>
-<pre><code class="language-bash">uv run python main.py \
-  --model-name my-model \
-  --save-results-path results/dureader/my-model.csv
-</code></pre>
-<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
+<h2 id="why-this-format">Why This Format<a class="headerlink" href="#why-this-format" title="Permanent link">&para;</a></h2>
+<p>The template is:</p>
 <ul>
-<li><code>results/dureader/*.csv</code> - raw CSV with all metrics for data processing</li>
-<li><code>results/dureader/*.md</code> - Markdown table that renders nicely on GitHub with wrapped lines</li>
+<li><strong>Simple</strong>: Direct instruction to answer the question based on the provided article</li>
+<li><strong>Chinese-native</strong>: Written in natural Chinese for Chinese models</li>
+<li><strong>Minimal</strong>: No unnecessary instructions that would increase prompt length</li>
 </ul>
-<p>Generate Markdown from an existing CSV:</p>
-<pre><code class="language-bash">./generate_md_from_csv.py results/dureader/model.csv
-</code></pre>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>data/dureader.jsonl</code> is used directly as ground truth with no fixing or filtering.</li>
-<li>Each sample may contain multiple acceptable answers. Evaluation scores a model response against all of them and keeps the best score.</li>
-<li>The prompt template is externalized in <code>prompt/template.txt</code> so you can adjust wording without changing the evaluator.</li>
-<li>Chinese text uses character-by-character tokenization for proper F1/ROUGE calculation regardless of spacing.</li>
-</ul>
+<h2 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">&para;</a></h2>
+<p>You can modify <code>prompt/template.txt</code> to change the prompting strategy without modifying any evaluation code. All evaluations will automatically use your updated template.</p>
 
 
 
@@ -639,10 +646,10 @@ uv run python main.py
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.code.copy", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.sections", "navigation.top", "content.code.copy", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
