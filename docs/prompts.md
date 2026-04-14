@@ -5,7 +5,12 @@ The project uses an externalized prompt template that lives at `prompt/template.
 ## Current Template
 
 ```text title="prompt/template.txt"
---8<-- "prompt/template.txt"
+请基于给定的文章回答下述问题。
+文章:{context}
+请基于上述文章回答下面的问题。
+问题:{input}
+请简短回答。
+回答:
 ```
 
 ## Template Variables
