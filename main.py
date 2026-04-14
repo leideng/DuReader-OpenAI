@@ -314,6 +314,8 @@ async def main():
 
     save_results_path = Path(args.save_results_path)
     save_results_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Write CSV output
     with open(save_results_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(
@@ -328,6 +330,13 @@ async def main():
                 "rl",
             ]
         )
+
+    # Also write Markdown output for better GitHub rendering
+    md_path = save_results_path.with_suffix('.md')
+    with open(md_path, "w", encoding="utf-8") as f:
+        f.write(f"# Evaluation Results: {args.model_name}\n\n")
+        f.write("| Index | Question | Gold | Response | F1 | Precision | Recall | ROUGE-L |\n")
+        f.write("|-------|----------|------|----------|----|-----------|--------|---------|\n")
 
     f1_list = []
     rl_list = []
@@ -398,6 +407,7 @@ async def main():
             recall_list.append(best_metrics["recall"])
             rl_list.append(best_metrics["rl"])
 
+            # Write to CSV
             with open(save_results_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
                 writer.writerow(
@@ -413,6 +423,19 @@ async def main():
                     ]
                 )
 
+            # Write to Markdown
+            def escape_md(text):
+                return text.replace("|", "\\|").replace("\n", "<br>")
+
+            md_path = save_results_path.with_suffix('.md')
+            with open(md_path, "a", encoding="utf-8") as f:
+                gold_str = "; ".join(f"- {escape_md(g)}" for g in gold_answers)
+                f.write(
+                    f"| {sample_idx} | {escape_md(question)} | {gold_str} | {escape_md(response)} | "
+                    f"{best_metrics['f1']:.4f} | {best_metrics['precision']:.4f} | "
+                    f"{best_metrics['recall']:.4f} | {best_metrics['rl']:.4f} |\n"
+                )
+
     print("---------------Result Summary---------------------")
     avg_f1 = np.mean(f1_list)
     avg_precision = np.mean(precision_list)
@@ -421,6 +444,17 @@ async def main():
     with open(save_results_path, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["", "", "", "", avg_f1, avg_precision, avg_recall, avg_rl])
+
+    # Add summary to Markdown
+    md_path = save_results_path.with_suffix('.md')
+    with open(md_path, "a", encoding="utf-8") as f:
+        f.write(f"\n## Summary\n\n")
+        f.write(f"- **Number of samples evaluated**: {len(f1_list)}\n")
+        f.write(f"- **Average F1**: {avg_f1:.4f}\n")
+        f.write(f"- **Average Precision**: {avg_precision:.4f}\n")
+        f.write(f"- **Average Recall**: {avg_recall:.4f}\n")
+        f.write(f"- **Average ROUGE-L**: {avg_rl:.4f}\n")
+
     print(f"F1: {avg_f1}")
     print(f"Precision: {avg_precision}")
     print(f"Recall: {avg_recall}")
