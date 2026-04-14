@@ -1,6 +1,6 @@
 # DuReader-OpenAI
 
-Evaluate OpenAI-compatible chat models on the 200-sample DuReader slice in `data/dureader.jsonl` and save per-sample QA metrics to CSV.
+Evaluate OpenAI-compatible chat models on the 200-sample DuReader slice in `data/dureader.jsonl` and save per-sample QA metrics.
 
 ## Overview
 
@@ -10,7 +10,7 @@ Evaluate OpenAI-compatible chat models on the 200-sample DuReader slice in `data
 - build one prompt per sample
 - send async batched chat-completion requests
 - compute `F1`, `Precision`, `Recall`, and `ROUGE-L`
-- save per-sample results plus a final average row to CSV
+- save per-sample results to **both CSV** (for data analysis) and **Markdown** (for GitHub display)
 
 The DuReader adaptation changes only:
 
@@ -55,6 +55,16 @@ uv run python main.py \
   --save-results-path results/dureader/gpt-5.4.csv
 ```
 
+This produces **two output files**:
+- `results/dureader/gpt-5.4.csv` - CSV output for data processing
+- `results/dureader/gpt-5.4.md` - Markdown table for GitHub display with automatic line wrapping
+
+Generate Markdown from existing CSV:
+
+```bash
+./generate_md_from_csv.py results/dureader/model.csv
+```
+
 ## Prompt Template
 
 The prompt is loaded from `prompt/template.txt` and formatted with:
@@ -92,15 +102,22 @@ Use `uv run python main.py --help` for the full argparse output.
 
 ## Output Format
 
-Each CSV contains one row per evaluated sample:
+**CSV Output** (`*.csv`): one row per evaluated sample:
 
 `index, question, gold, response, f1, precision, recall, rl`
 
-The `gold` column stores the full answer list as JSON. Metrics are computed against all candidate gold answers and use the best-matching one for each sample.
+The `gold` column stores the full answer list as formatted JSON. Metrics are computed against all candidate gold answers and use the best-matching one for each sample.
+
+**Markdown Output** (`*.md`): GitHub-renderable table with:
+- One row per sample
+- Bullet points for multiple gold answers
+- Automatic line wrapping for readability
+- Summary section at the end with average metrics
 
 ## Repository Layout
 
 - `main.py`: evaluation entry point
+- `generate_md_from_csv.py`: generate Markdown output from existing CSV
 - `data/dureader.jsonl`: DuReader evaluation dataset
 - `prompt/template.txt`: prompt template
-- `results/`: CSV outputs
+- `results/`: output directory for CSV and Markdown results

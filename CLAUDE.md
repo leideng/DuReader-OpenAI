@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-DuReader-OpenAI evaluates OpenAI-compatible chat models on a 200-sample slice of the DuReader Chinese question answering dataset. It computes F1, Precision, Recall, and ROUGE-L metrics and saves results to CSV.
+DuReader-OpenAI evaluates OpenAI-compatible chat models on a 200-sample slice of the DuReader Chinese question answering dataset. It computes F1, Precision, Recall, and ROUGE-L metrics and saves results to **both CSV (for data analysis) and Markdown (for GitHub display)**.
 
 ## Commands
 
@@ -33,6 +33,11 @@ Show all CLI options:
 uv run python main.py --help
 ```
 
+Generate Markdown from existing CSV:
+```bash
+./generate_md_from_csv.py results/dureader/model.csv
+```
+
 ## Environment Variables Required
 
 - `OPENAI_API_KEY` - API key for OpenAI-compatible endpoint
@@ -46,17 +51,20 @@ The evaluation flow in `main.py`:
 2. **Prompt Building**: Loads template from `prompt/template.txt` and formats with `{context}` and `{input}` (question)
 3. **Async Inference**: Sends batched concurrent chat completion requests using AsyncOpenAI client with semaphore-controlled concurrency
 4. **Metric Calculation**:
-   - Normalizes answers (handles Chinese CJK character tokenization)
+   - Normalizes answers (handles Chinese CJK character tokenization - any text with Chinese gets character-by-character tokenization)
    - Computes F1/Precision/Recall and ROUGE-L (custom LCS implementation)
    - Evaluates prediction against **all** gold answers and keeps the best-scoring one
-5. **Output**: Writes per-sample results to CSV with a final average metrics row
+5. **Output**:
+   - Writes per-sample results to **CSV** with a final average metrics row (for data analysis)
+   - Also writes a **Markdown table** (same base name, `.md` extension) that renders nicely on GitHub
 
 ## Key Files
 
 - `main.py`: Entry point and all evaluation logic
+- `generate_md_from_csv.py`: Generate Markdown output from existing CSV files
 - `data/dureader.jsonl`: Evaluation dataset (200 samples)
 - `prompt/template.txt`: Chinese QA prompt template
-- `results/`: Output directory for CSV result files
+- `results/`: Output directory for CSV and Markdown result files
 
 ## Key CLI Options
 
