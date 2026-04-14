@@ -404,7 +404,7 @@ async def main():
                     [
                         sample_idx,
                         question,
-                        json.dumps(gold_answers, ensure_ascii=False),
+                        json.dumps(gold_answers, ensure_ascii=False, indent=2),
                         response,
                         best_metrics["f1"],
                         best_metrics["precision"],
