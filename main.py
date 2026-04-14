@@ -125,7 +125,8 @@ def normalize_answer(text):
         return " ".join(value.split())
 
     def remove_punc(value):
-        exclude = set(string.punctuation)
+        # Remove ASCII and common Chinese punctuation
+        exclude = set(string.punctuation + "。？！，、；：「」『』《》（）【】")
         return "".join(ch for ch in value if ch not in exclude)
 
     def lower(value):
@@ -140,7 +141,8 @@ def contains_cjk(text):
 
 def tokenize_for_metrics(text):
     normalized = normalize_answer(text)
-    if contains_cjk(normalized) and " " not in normalized:
+    if contains_cjk(normalized):
+        # For Chinese, tokenize character-by-character regardless of spaces
         return [ch for ch in normalized if not ch.isspace()]
     return normalized.split()
 
